@@ -59,3 +59,18 @@ typings/
 
 # next.js build output
 .next
+
+# .sass-cache
+.sass-cache
+
+# readme
+readme.md
+
+# zadanie
+zadanie-golden.psd
+
+# package-lock.json
+package-lock.json
+
+# pixelperf
+pixelperf
