@@ -1,3 +1,6 @@
+.row {
+  margin: 1em 0 1em 0; }
+
 [class^='label-'] {
   border-radius: 5px;
   padding: 5px; }
@@ -10,5 +13,8 @@
 
 .label-red {
   background-color: #C74F4F; }
+
+.btn-custom {
+  margin: 0 0.5em 0 0.5em; }
 
 /*# sourceMappingURL=style.css.map */
