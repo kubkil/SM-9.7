@@ -1,0 +1,23 @@
+.row {
+  margin: 1em 0 1em 0; }
+
+[class^='label-'] {
+  border-radius: 5px;
+  padding: 5px; }
+
+.label-grey {
+  background-color: #9A9A9A; }
+
+.label-blue {
+  background-color: #4182AB; }
+
+.label-red {
+  background-color: #C74F4F; }
+
+.btn-custom {
+  margin: 0 0.5em 0 0.5em; }
+
+#js-resultFinal {
+  font-size: 2em; }
+
+/*# sourceMappingURL=style.css.map */
