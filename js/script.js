@@ -21,6 +21,7 @@ pickScissors.addEventListener('click', function playerScissors() {
 const newGameElem = document.getElementById('js-newGameElem');
 const pickElem = document.getElementById('js-playerPickElem');
 const resultsElem = document.getElementById('js-resultsTableElem');
+const resultFinal = document.getElementById('js-resultFinal');
 let gameState = 'notStarted'; // started //ended
 
 // SET DISPLAY OF NEW GAME BTN; ROCK PAPER SCISSORS BTNS; RESULT TABLE
@@ -31,7 +32,11 @@ function setGameElements() {
       newGameElem.style.display = 'none';
       pickElem.style.display = 'block';
       resultsElem.style.display = 'block';
-    break;
+      resultFinal.style.display = 'none';
+      pickRock.disabled = false;
+      pickPaper.disabled = false;
+      pickScissors.disabled = false;
+      break;
     case 'ended':
       newGameBtn.innerText = 'Jeszcze raz';
     case 'notStarted':
@@ -39,6 +44,7 @@ function setGameElements() {
       newGameElem.style.display = 'block';
       pickElem.style.display = 'none';
       resultsElem.style.display = 'none';
+      resultFinal.style.display = 'none';
   }
 }
 
@@ -122,20 +128,24 @@ function checkRoundWinner(playerPick, computerPick) {
 }
 
 function disableSelectionButtons() {
-  pickRock.removeEventListener('click', playerRock);
-  pickPaper.removeEventListener('click', playerPaper);
-  pickScissors.removeEventListener('click', playerScissors);
+  pickRock.disabled = true;
+  pickPaper.disabled = true;
+  pickScissors.disabled = true;
 }
+
+const lost = document.getElementById('js-lost');
+const win = document.getElementById('js-won');
 
 function endGame () {
   if (player.score === 10 || computer.score === 10) {
+    if (player.score === 10) {
+      lost.style.display = 'none';
+    } else {
+      win.style.display = 'none';
+    }
     gameState = 'ended';
     setGameElements();
-    if (player.score === 10) {
-      alert('wygrałeś');
-    } else {
-      alert('przegrałeś');
-    }
+    resultFinal.style.display = 'block';
   }
 }
 
